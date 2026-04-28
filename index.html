@@ -1,65 +1,69 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
-    <head>
-        <title>To-Do List</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
 
-        <!-- Bootstrap CSS v5.3.8 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"/>
-        
-        <link rel="stylesheet" href="style.css" />
+<head>
+    <title>Modern Task App</title>
 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <body>
-        <header>
-            <!-- place navbar here -->
-        </header>
-        <main>
-            <div class="row justify-content-center">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-                <div class="col-md-8 col-lg-6">
-                    <h2 class="text-center"> To Do List</h2>
+<body>
 
-                    <div class="row">
-                        <div class="col-8">
-                            <input type="text" class="form-control" id="taskInput" placeholder="Enter a task!">
-                        </div>
-                        <div class="col-4">
-                            <button id="addTaskBtn" class="btn btn-primary w-100">Add Task</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <ul id="taskList" class="list-group mt-3"></ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <button id="clearTaskBtn" class="btn btn-danger w-100">Clear All Tasks</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="app-container">
 
+        <h2 class="title">Task Manager</h2>
 
+        <p id="taskCounter">0 tasks</p>
+
+        <!-- 🔍 SEARCH -->
+        <label class="input-label">Search Tasks</label>
+        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search tasks...">
+
+        <!-- 🏷️ CATEGORY FILTER -->
+        <label class="input-label">Filter by Category</label>
+        <select id="categoryFilter" class="form-select mb-3">
+            <option value="All">All</option>
+            <option value="School">School</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+        </select>
+
+        <!-- ➕ ADD TASK -->
+        <label class="input-label">Add New Task</label>
+        <div class="row mb-3">
+            <div class="col-7">
+                <input type="text" id="taskInput" class="form-control" placeholder="Enter task...">
             </div>
-        </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"
-        ></script>
-        <script src="script.js"></script>
-    </body>
+
+            <div class="col-3">
+                <select id="categorySelect" class="form-select">
+                    <option value="School">School</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                </select>
+            </div>
+
+            <div class="col-2">
+                <button id="addTaskBtn" class="btn btn-dark w-100">Add</button>
+            </div>
+        </div>
+
+        <!-- LIST -->
+        <ul id="taskList" class="list-group"></ul>
+
+        <!-- CLEAR -->
+        <button id="clearTaskBtn" class="btn btn-outline-danger w-100 mt-3">
+            Clear All
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
